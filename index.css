@@ -1,0 +1,142 @@
+/* index.css — home page styles (imports global.css) */
+
+/* HERO */
+.hero {
+    display: flex;
+    height: 90vh;
+    background-color: var(--light);
+    padding: 40px 80px;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.hero-left {
+    flex: 1;
+    max-width: 500px;
+}
+
+.hero-left h1 {
+    font-size: 48px;
+    color: var(--dark);
+}
+
+.hero-tagline {
+    margin: 20px 0;
+    font-size: 20px;
+    line-height: 1.6;
+    color: #444;
+    max-width: 520px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.cta-btn {
+    padding: 10px 20px;
+    border: none;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cta-btn:hover {
+    background-color: var(--secondary);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.hero-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+/* ABOUT */
+.about {
+    padding: 60px 40px;
+    background-color: white;
+    text-align: center;
+}
+
+.about h2 {
+    margin-bottom: 20px;
+    color: var(--dark);
+}
+
+.about li {
+    margin: 10px 0;
+}
+
+.about-intro {
+    margin-bottom: 30px;
+    color: #555;
+}
+
+/* FAQ */
+.faq-container {
+    max-width: 700px;
+    margin: auto;
+}
+
+.faq-item {
+    background-color: var(--light);
+    border: 1px solid var(--primary);
+    border-radius: 8px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--dark);
+}
+
+.arrow {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    background-color: white;
+    border-top: 1px solid var(--primary);
+    transition: max-height 0.4s ease, padding 0.3s ease;
+}
+
+.faq-item.active .arrow {
+    transform: rotate(180deg);
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px;
+    padding: 15px 20px;
+}
+
+.ai-credit {
+    text-align: center;
+    font-size: 12px;
+    color: #888;
+    margin: 20px 0;
+}

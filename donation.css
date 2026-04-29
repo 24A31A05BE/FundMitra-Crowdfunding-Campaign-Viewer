@@ -1,0 +1,171 @@
+/* donation.css — donation modal & flow (imports global.css) */
+
+/* DONATE ALERT POPUP */
+.donate-alert {
+    position: fixed;
+    bottom: 120px;
+    right: 50px;
+    background: var(--light);
+    color: var(--primary);
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: bold;
+    border: 1px solid var(--primary);
+    opacity: 0;
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+/* OVERLAY */
+.donation-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(6px);
+    background: rgba(0,0,0,0.2);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+/* MODAL BOX */
+.donation-modal {
+    background: white;
+    border: 2px solid var(--primary);
+    padding: 18px;
+    border-radius: 12px;
+    width: 350px;
+    text-align: center;
+}
+
+/* AMOUNT INPUT */
+.donation-input {
+    width: 100%;
+    padding: 12px;
+    margin: 15px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+/* QUICK AMOUNT BUTTONS */
+.quick-amounts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.quick-btn {
+    background: var(--light);
+    color: var(--primary);
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.quick-btn:hover {
+    transform: scale(1.05);
+    border: 1px solid var(--primary);
+}
+
+/* PAYMENT METHOD DROPDOWN */
+.payment-dropdown {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* PAYMENT RADIO OPTIONS */
+.payment-options {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.payment-radio {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.payment-radio input {
+    cursor: pointer;
+}
+
+/* PAYMENT DETAIL FIELDS */
+.payment-details {
+    margin-bottom: 15px;
+}
+
+.payment-details input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+/* PROCESS BUTTON */
+.process-btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 25px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* CANCEL BUTTON (overrides global for pill shape) */
+.donation-modal .cancel-btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 25px;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.donation-modal .cancel-btn:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* SUCCESS TOAST */
+.success-toast {
+    position: fixed;
+    top: 80px;
+    right: -500px;
+    background: white;
+    color: var(--primary);
+    padding: 14px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    border: 1px solid var(--primary);
+    transition: right 0.5s ease;
+    z-index: 1000;
+}
+
+.success-toast.show {
+    right: 30px;
+}
+
+.success-toast.hide {
+    right: -500px;
+}

@@ -1,0 +1,98 @@
+/* login.css — login & register page (imports global.css) */
+
+body {
+    background-color: var(--primary);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CARD */
+.login-card {
+    background-color: var(--light);
+    padding: 40px;
+    border-radius: 12px;
+    width: 420px;
+    text-align: center;
+}
+
+/* LOGO */
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--primary);
+}
+
+.logo-img {
+    width: 60px;
+    height: auto;
+}
+
+/* TABS */
+.tabs {
+    display: flex;
+    margin: 20px 0;
+}
+
+.tabs button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    background-color: white;
+    color: var(--primary);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.tabs button.active {
+    background-color: var(--primary);
+    color: white;
+}
+
+/* INPUTS */
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+/* PASSWORD FIELD */
+.password-box {
+    position: relative;
+}
+
+.eye {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    cursor: pointer;
+    color: var(--primary);
+}
+
+/* BUTTONS */
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button.back {
+    background-color: gray;
+}
+
+/* MULTI-STEP SECTIONS */
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}

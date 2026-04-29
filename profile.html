@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="css/profile.css">
+	<link rel="stylesheet" href="css/global.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        
+        <a href="index.html" class="logo-link">
+            <img src="images/logo1.png" alt="FundMitra Logo" class="logo-img">
+            <span class="logo-text">FundMitra</span>
+        </a>
+
+        <div class="nav-right">
+            <ul class="nav-links">
+				<li><a href="index.html#about">About</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="campaigns.html">Explore</a></li>
+                <li><a href="dashboard.html">My Campaigns</a></li>
+            </ul>
+
+            <div id="nav-user"></div>
+        </div>
+
+    </nav>
+	
+	<!-- 🔹 MAIN PROFILE CONTAINER -->
+	<div class="profile-container">
+
+		<div class="profile-box">
+
+			<!-- TOP USER INFO -->
+			<div class="profile-header">
+
+				<div class="profile-left">
+					<div class="profile-avatar" id="profile-avatar">U</div>
+
+					<div class="profile-text">
+						<h2 id="profile-name">Username</h2>
+					</div>
+				</div>
+
+				<button class="edit-btn">Edit</button>
+
+			</div>
+
+<hr>
+
+<!-- DETAILS -->
+<div class="profile-section">
+    <h3>Details</h3>
+
+    <div class="details-grid">
+        <p><strong>Name:</strong> <span id="detail-name"></span></p>
+        <p><strong>Email:</strong> <span id="detail-email"></span></p>
+        <p><strong>Contact:</strong> <span id="detail-contact"></span></p>
+        <p><strong>Location:</strong> <span id="detail-location"></span></p>
+    </div>
+</div>
+
+<hr>
+
+<!-- CONTRIBUTIONS -->
+<div class="profile-section">
+    <h3>Contributions</h3>
+
+    <!-- STATS CARDS -->
+    <div class="contribution-cards">
+        <div class="contribution-card">
+            <p>No. of Donations</p>
+            <h2 id="donation-count">0</h2>
+        </div>
+
+        <div class="contribution-card">
+            <p>Total Amount</p>
+            <h2 id="total-amount">₹0</h2>
+        </div>
+    </div>
+	<div id="contribution-content">
+
+		<!-- EMPTY STATE -->
+		<div id="no-contributions" class="no-contributions hidden">
+			<p>No contributions yet.</p>
+			<p class="sub-text">Start supporting a cause and make an impact 💚</p>
+
+			<button onclick="goToCampaigns()" class="explore-btn">
+				Explore Campaigns
+			</button>
+		</div>
+
+		<!-- TABLE -->
+		<table class="donation-table" id="donation-table">
+			<thead>
+				<tr>
+					<th>Campaign</th>
+					<th>Payment</th>
+					<th>Date</th>
+					<th>Time</th>
+					<th>Amount</th>
+					<th>View Campaign</th>
+				</tr>
+			</thead>
+			<tbody id="donation-table-body"></tbody>
+		</table>
+
+	</div>
+</div>
+
+<hr>
+
+			<hr>
+
+			<!-- LOGOUT -->
+			<div class="profile-section logout-section">
+				<button class="logout-main-btn" onclick="logout()">Logout</button>
+			</div>
+
+		</div>
+
+	</div>
+<!-- EDIT PROFILE MODAL -->
+<div id="edit-modal" class="modal hidden">
+    <div class="modal-box">
+
+        <h3>Edit Profile</h3>
+
+		<input type="text" id="edit-name" placeholder="Name">
+		<p class="error" id="edit-name-error"></p>
+
+		<input type="email" id="edit-email" placeholder="Email">
+		<p class="error" id="edit-email-error"></p>
+
+		<input type="text" id="edit-contact" placeholder="Contact Number">
+		<p class="error" id="edit-contact-error"></p>
+
+		<input type="text" id="edit-location" placeholder="Location">
+
+        <div class="modal-actions">
+            <button class="confirm-btn" onclick="saveProfile()">Confirm</button>
+            <button class="cancel-btn" onclick="closeModal()">Cancel</button>
+        </div>
+
+    </div>
+</div>
+
+<!-- TOAST -->
+<div id="toast" class="toast hidden">
+    Changes applied successfully
+</div>
+<script src="js/data.js"></script>
+<script src="js/profile.js"></script>
+</body>
+</html>

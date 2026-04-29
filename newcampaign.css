@@ -1,0 +1,27 @@
+/* newcampaign.css — create / edit campaign modal (imports global.css) */
+
+/* MODAL OVERLAY */
+.modal-overlay {
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+/* MODAL BOX OVERRIDES for campaign form */
+.modal-box {
+    max-width: 400px;
+}
+
+/* CREATE BUTTON */
+.create-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.create-btn:hover {
+    background: var(--secondary);
+}

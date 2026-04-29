@@ -1,0 +1,402 @@
+/* campaigndetails.css — campaign detail page (imports global.css) */
+
+body {
+    background-color: var(--light);
+}
+
+/* WRAPPER */
+.details-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 30px 20px;
+}
+
+/* CARD */
+.details-card {
+    width: 100%;
+    max-width: 1100px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* BANNER IMAGE */
+.details-image {
+    width: 100%;
+    height: 420px;
+    background-color: #ccc;
+}
+
+.details-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* CONTENT AREA */
+.details-content {
+    padding: 25px;
+}
+
+.details-main {
+    display: flex;
+    gap: 40px;
+}
+
+.details-left {
+    flex: 2;
+}
+
+.details-right {
+    flex: 1;
+}
+
+/* TAGS */
+.tags {
+    margin-bottom: 10px;
+}
+
+.tag {
+    background-color: var(--light);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-right: 8px;
+}
+
+.details-left h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+/* CREATOR */
+.creator {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.creator-img {
+    width: 35px;
+    height: 35px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.creator-label {
+    font-size: 12px;
+    color: gray;
+}
+
+/* FEED / TABS */
+.feed-section {
+    margin-top: 30px;
+}
+
+.feed-tabs {
+    display: flex;
+    gap: 25px;
+    position: relative;
+}
+
+.feed-tabs::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--primary);
+    z-index: 1;
+}
+
+.tab {
+    background: none;
+    border: none;
+    color: var(--primary);
+    font-size: 14px;
+    padding: 10px 12px;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+.tab.active {
+    background: white;
+    border: 2px solid var(--primary);
+    border-bottom: none;
+    border-radius: 8px 8px 0 0;
+}
+
+.feed-content {
+    padding: 20px 0;
+    line-height: 1.6;
+}
+
+/* FUNDING BOX */
+.funding-box {
+    background: white;
+    border: 2px solid var(--primary);
+    border-radius: 12px;
+    padding: 22px;
+    height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.funding-percent {
+    font-size: 48px;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.funding-sub {
+    font-size: 13px;
+    color: #8c8c8c;
+    margin-top: -8px;
+}
+
+.amount-row {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.amount-block h2 {
+    font-size: 20px;
+}
+
+.amount-block p {
+    font-size: 11px;
+    color: #888;
+}
+
+.extra-row {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.extra-row h2 {
+    font-size: 18px;
+}
+
+.extra-row p {
+    font-size: 11px;
+    color: #888;
+}
+
+/* COUNTDOWN TIMER */
+.timer-box {
+    background: var(--light);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+}
+
+.timer-title {
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 8px;
+}
+
+.time-values {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 7px;
+}
+
+.time-labels {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 10px;
+    margin-top: 6px;
+    color: #888;
+}
+
+/* DONATE BUTTON */
+.donate-btn {
+    padding: 13px;
+    border-radius: 25px;
+    font-size: 15px;
+    border: 2px solid var(--primary);
+    background-color: var(--primary);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.donate-btn:hover {
+    background-color: white;
+    color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* UPDATES TAB */
+.update-card {
+    background-color: var(--light);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.update-date {
+    font-size: 12px;
+    color: gray;
+    margin-bottom: 5px;
+}
+
+.update-title {
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.update-content {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* BACKERS TAB */
+.backer-card {
+    background-color: var(--light);
+    padding: 12px 15px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.backer-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.backer-avatar {
+    width: 35px;
+    height: 35px;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.backer-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.backer-name {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.backer-time {
+    font-size: 12px;
+    color: gray;
+}
+
+.backer-amount {
+    font-weight: bold;
+    color: var(--primary);
+}
+
+/* COMMENTS TAB */
+.comment-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 2px solid var(--primary);
+    border-radius: 25px;
+    padding: 8px 12px;
+    margin-bottom: 20px;
+}
+
+.comment-box input {
+    border: none;
+    outline: none;
+    flex: 1;
+    font-size: 14px;
+}
+
+.comment-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.comment-alert {
+    position: absolute;
+    bottom: 45px;
+    right: 0;
+    background: var(--light);
+    color: var(--primary);
+    z-index: 1000;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    border: 1px solid var(--primary);
+    opacity: 0;
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+.comment-item {
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.comment-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.comment-avatar {
+    width: 32px;
+    height: 32px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.comment-name {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.comment-time {
+    font-size: 12px;
+    color: gray;
+    margin-left: 6px;
+}
+
+.comment-text {
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 1.5;
+}

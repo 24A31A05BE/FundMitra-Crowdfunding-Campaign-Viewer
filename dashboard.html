@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Campaigns</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+	<link rel="stylesheet" href="css/global.css">
+	<link rel="stylesheet" href="css/newcampaign.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        
+        <a href="index.html" class="logo-link">
+            <img src="images/logo1.png" alt="FundMitra Logo" class="logo-img">
+            <span class="logo-text">FundMitra</span>
+        </a>
+
+        <div class="nav-right">
+            <ul class="nav-links">
+				<li><a href="index.html#about">About</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="campaigns.html">Explore</a></li>
+                <li><a href="dashboard.html">My Campaigns</a></li>
+            </ul>
+
+            <div id="nav-user"></div>
+        </div>
+
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <div class="dashboard-container" id="dashboard-content">
+    <!-- JS will inject content here -->
+</div>
+<!-- CREATE CAMPAIGN MODAL -->
+<div id="campaignModal" class="modal-overlay">
+
+    <div class="modal-box">
+        <form id="campaignForm">
+
+            <input type="text" id="title" placeholder="Title *" required>
+
+			<select id="category" required>
+				<option value="">Select Category</option>
+				<option value="Health">Health</option>
+				<option value="Education">Education</option>
+				<option value="Social">Social</option>
+				<option value="Emergency">Emergency</option>
+				<option value="Environment">Environment</option>
+				<option value="Creative">Creative</option>
+				<option value="Innovation">Innovation</option>
+				<option value="Other">Other</option>
+			</select>
+
+            <textarea id="shortDescription" placeholder="Short Description *" required></textarea>
+
+            <textarea id="fullDescription" placeholder="Full Description"></textarea>
+
+            <input type="text" id="image" placeholder="Image URL">
+
+            <input type="number" id="goalAmount" placeholder="Goal Amount *" required>
+
+            <input type="number" id="duration" placeholder="Campaign Duration (days) *" required>
+
+            <div class="modal-actions">
+                <button type="submit" class="create-btn">Confirm</button>
+                <button type="button" class="cancel-btn" onclick="closeModal()">Cancel</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+<div id="toast" class="toast"></div>
+<div id="deleteModal" class="modal-overlay">
+    <div class="modal-box">
+        <p style="margin-bottom:15px;">
+            Are you sure you want to delete this campaign?<br>
+            <small>This change is permanent and cannot be reversed.</small>
+        </p>
+
+        <div class="modal-actions">
+            <button class="create-btn" id="confirmDelete">Yes, I'm sure</button>
+            <button class="cancel-btn" onclick="closeDeleteModal()">No, Cancel</button>
+        </div>
+    </div>
+</div>
+<script src="js/data.js"></script>
+<script src="js/newcampaign.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

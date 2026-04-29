@@ -1,0 +1,163 @@
+/* campaign.css — browse & filter page (imports global.css) */
+
+body {
+    background-color: var(--light);
+}
+
+/* MAIN LAYOUT */
+.main-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px 40px;
+    background-color: var(--light);
+    min-height: 100vh;
+}
+
+/* FILTER SIDEBAR */
+.filter-box {
+    width: 250px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    height: fit-content;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 90px;
+}
+
+.filter-box h2 {
+    margin: 15px 0 10px;
+    color: var(--dark);
+}
+
+.search-bar {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+}
+
+.filter-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--light);
+    color: var(--dark);
+    cursor: pointer;
+}
+
+.filter-btn.active {
+    background-color: var(--primary);
+    color: white;
+}
+
+/* CARDS GRID */
+.cards-container {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+
+.card {
+    width: 260px;
+    min-height: 460px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.card-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.card-image {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card h3 {
+    font-size: 17px;
+    margin-bottom: 6px;
+}
+
+.card p {
+    font-size: 13px;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+/* FUNDING ROW */
+.funding-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.funding-percent {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.funding-raised {
+    color: #555;
+}
+
+/* STATS */
+.stats-row {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    margin-top: 8px;
+}
+
+.stats-row div {
+    flex: 1;
+}
+
+.stats-row p {
+    font-size: 11px;
+    color: #888;
+}
+
+.ending-soon {
+    color: red;
+    font-weight: bold;
+}
+
+.card button {
+    margin: 12px 15px 15px 15px;
+    padding: 10px;
+    border: none;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.card button:hover {
+    background-color: var(--secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}

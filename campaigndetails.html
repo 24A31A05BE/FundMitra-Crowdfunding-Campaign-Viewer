@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaign Details</title>
+    <link rel="stylesheet" href="css/campaigndetails.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/donation.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        
+        <a href="index.html" class="logo-link">
+            <img src="images/logo1.png" alt="FundMitra Logo" class="logo-img">
+            <span class="logo-text">FundMitra</span>
+        </a>
+
+        <div class="nav-right">
+            <ul class="nav-links">
+				<li><a href="#index.htmlabout">About</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="campaigns.html">Explore</a></li>
+                <li><a href="dashboard.html">My Campaigns</a></li>
+            </ul>
+
+            <div id="nav-user"></div>
+        </div>
+
+    </nav>
+
+    <!-- MAIN -->
+    <div class="details-wrapper">
+
+        <div class="details-card">
+
+            <div class="details-image">
+                <img id="campaign-image" src="">
+            </div>
+
+            <div class="details-content">
+
+                <div class="details-main">
+
+                    <!-- LEFT -->
+                    <div class="details-left">
+
+                        <div class="tags">
+                            <span id="category-tag" class="tag"></span>
+                            <span id="status-tag" class="tag"></span>
+                        </div>
+
+                        <h1 id="campaign-title"></h1>
+
+                        <div class="creator">
+                            <div class="creator-img" id="creator-img"></div>
+                            <div>
+                                <span id="creator-name"></span>
+                                <p class="creator-label">Campaign Creator</p>
+                            </div>
+                        </div>
+
+                        <!-- FEED -->
+                        <div class="feed-section">
+                            <div class="feed-tabs">
+                                <button class="tab active" onclick="switchTab(event,'desc')">Description</button>
+                                <button class="tab" onclick="switchTab(event,'updates')">Updates</button>
+                                <button class="tab" onclick="switchTab(event,'backers')">Donors</button>
+                                <button class="tab" onclick="switchTab(event,'comments')">Comments</button>
+                            </div>
+
+                            <div class="feed-content" id="feed-content"></div>
+                        </div>
+
+                    </div>
+
+                    <!-- RIGHT -->
+                    <div class="details-right">
+                        <div class="funding-box">
+
+                            <div class="funding-percent" id="funding-percent">0%</div>
+                            <p class="funding-sub">of goal funded</p>
+
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progress-fill"></div>
+                            </div>
+
+                            <div class="amount-row">
+                                <div class="amount-block">
+                                    <h2 id="raised-amount"></h2>
+                                    <p>RAISED</p>
+                                </div>
+
+                                <div class="amount-block">
+                                    <h2 id="goal-amount"></h2>
+                                    <p>GOAL</p>
+                                </div>
+                            </div>
+
+                            <div class="extra-row">
+                                <div>
+                                    <h2 id="backers"></h2>
+                                    <p>DONORS</p>
+                                </div>
+
+                                <div>
+                                    <h2 id="days-left"></h2>
+                                    <p>DAYS LEFT</p>
+                                </div>
+                            </div>
+
+                            <div class="timer-box">
+                                <p class="timer-title">TIME REMAINING</p>
+
+                                <div class="time-values" id="time-values"></div>
+
+                                <div class="time-labels">
+                                    <span>DAYS</span>
+                                    <span>HRS</span>
+                                    <span>MIN</span>
+                                    <span>SEC</span>
+                                </div>
+                            </div>
+
+                            <button class="donate-btn" onclick="handleDonate()">Donate</button>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+	<!-- DONATION MODAL -->
+	<!-- DONATION OVERLAY -->
+<div id="donation-overlay" class="donation-overlay">
+
+    <div class="donation-modal">
+
+        <h2>Support this Project</h2>
+
+        <!-- AMOUNT INPUT -->
+        <input type="number" id="donation-amount" placeholder="Enter amount" class="donation-input">
+		<div class="error-text" id="amount-error"></div>
+        <!-- QUICK AMOUNTS -->
+        <div class="quick-amounts">
+            <div class="quick-btn" onclick="setAmount(100)">₹100</div>
+            <div class="quick-btn" onclick="setAmount(500)">₹500</div>
+            <div class="quick-btn" onclick="setAmount(1000)">₹1000</div>
+            <div class="quick-btn" onclick="setAmount(5000)">₹5000</div>
+        </div>
+		<!-- CONTACT (GUEST ONLY) -->
+		<div id="guest-fields">
+			<input type="text" id="guest-contact" placeholder="Email or Phone (required)" class="donation-input">
+			<div class="error-text" id="contact-error"></div>
+
+			<input type="text" id="guest-name" placeholder="Display name (optional)" class="donation-input">
+		</div>
+        <!-- PAYMENT METHOD -->
+        <div class="payment-options">
+
+			<label class="payment-radio">
+				<input type="radio" name="payment" value="upi" checked onchange="updatePaymentFields()">
+				UPI
+			</label>
+
+			<label class="payment-radio">
+				<input type="radio" name="payment" value="card" onchange="updatePaymentFields()">
+				Card
+			</label>
+
+			<label class="payment-radio">
+				<input type="radio" name="payment" value="netbanking" onchange="updatePaymentFields()">
+				Net Banking
+			</label>
+
+		</div>
+		
+		<div id="payment-details" class="payment-details"></div>
+
+        <!-- BUTTON -->
+        <button class="process-btn" onclick="processPayment()">Process Payment</button>
+		<button class="cancel-btn" onclick="closeModal()">Cancel</button>
+
+    </div>
+
+</div>
+<div id="success-toast" class="success-toast">
+    Payment successful 🎉 Thank you for funding our campaign 💚
+</div>
+	<!-- ALERT (for not logged in) -->
+	<div id="donate-alert" class="donate-alert"></div>
+    <script src="js/data.js"></script>
+	<script src="js/donation.js"></script>
+    <script src="js/campaigndetails.js"></script>
+</body>
+</html>

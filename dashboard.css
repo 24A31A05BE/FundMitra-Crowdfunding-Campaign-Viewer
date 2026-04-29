@@ -1,0 +1,267 @@
+/* dashboard.css — creator dashboard (imports global.css) */
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #fafafa;
+}
+
+/* EMPTY STATE (before campaigns) */
+.dashboard-container {
+    flex: 1;
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e6f4ee;
+}
+
+.dashboard-card {
+    background: #ffffff;
+    border: 2px solid var(--primary);
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+}
+
+.dashboard-card h2 {
+    margin: 0;
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.demo-text {
+    margin-top: 15px;
+    font-size: 13px;
+    color: #777;
+}
+
+.start-btn {
+    margin-top: 20px;
+    padding: 10px 22px;
+    border: none;
+    border-radius: 50px;
+    background-color: var(--primary);
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.start-btn:hover {
+    background-color: #3f7c64;
+    transform: translateY(-2px);
+}
+
+/* MAIN DASHBOARD WRAPPER */
+.dashboard-wrapper {
+    width: 100%;
+    max-width: 1100px;
+    padding: 30px;
+}
+
+/* HEADER */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.dashboard-header h2 {
+    color: var(--primary);
+}
+
+.header-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.new-btn {
+    padding: 8px 18px;
+    border: none;
+    border-radius: 50px;
+    background-color: var(--primary);
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.new-btn:hover {
+    background-color: var(--secondary);
+}
+
+.section-title {
+    margin: 20px 0 10px;
+    color: #333;
+}
+
+/* SUMMARY CARDS */
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.summary-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.summary-card h3 {
+    color: var(--primary);
+    margin-bottom: 5px;
+}
+
+/* PLACEHOLDER */
+.placeholder-box {
+    background: #ffffff;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    padding: 40px;
+    text-align: center;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+/* ANALYTICS CHARTS */
+.analytics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+}
+
+.chart-box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chart-box canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* CAMPAIGN TABLE */
+.table-container {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    overflow-x: auto;
+}
+
+.campaign-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.campaign-table th {
+    text-align: left;
+    font-size: 13px;
+    color: #888;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+.campaign-table td {
+    padding: 18px 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.campaign-name {
+    font-weight: 600;
+    color: #222;
+}
+
+/* PROGRESS IN TABLE */
+.progress-bar {
+    width: 120px;
+    margin-bottom: 5px;
+}
+
+.percent-text {
+    font-size: 12px;
+    color: var(--primary);
+}
+
+/* STATUS BADGE */
+.status {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.status.active {
+    background: var(--light);
+    color: var(--primary);
+}
+
+.status.completed {
+    background: #eee;
+    color: #666;
+}
+
+/* ACTION BUTTONS */
+.actions {
+    white-space: nowrap;
+}
+
+.actions-inner {
+    display: flex;
+    gap: 6px;
+    flex-wrap: nowrap;
+}
+
+.actions button {
+    padding: 5px 10px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-size: 12px;
+    background: var(--light);
+    color: var(--primary);
+    transition: 0.2s;
+}
+
+.actions button:hover {
+    background: white;
+    border: 1px solid var(--primary);
+}
+
+.actions .delete {
+    color: #e74c3c;
+}
+
+/* TOOLTIP */
+.action-tooltip {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -120%);
+    background: white;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    padding: 6px 10px;
+    font-size: 12px;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+.action-tooltip.show {
+    opacity: 1;
+}

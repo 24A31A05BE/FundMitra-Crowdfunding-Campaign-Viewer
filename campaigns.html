@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaigns</title>
+    <link rel="stylesheet" href="css/campaigns.css">
+	<link rel="stylesheet" href="css/global.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        
+        <a href="index.html" class="logo-link">
+            <img src="images/logo1.png" alt="FundMitra Logo" class="logo-img">
+            <span class="logo-text">FundMitra</span>
+        </a>
+
+        <div class="nav-right">
+            <ul class="nav-links">
+				<li><a href="index.html#about">About</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="campaigns.html">Explore</a></li>
+                <li><a href="dashboard.html">My Campaigns</a></li>
+            </ul>
+
+            <div id="nav-user"></div>
+        </div>
+
+    </nav>
+
+    <!-- MAIN -->
+    <div class="main-container">
+
+        <!-- FILTER BOX -->
+        <aside class="filter-box">
+
+            <h2>Search</h2>
+            <input type="text" placeholder="Search campaigns..." class="search-bar">
+
+            <h2>Category</h2>
+            <div class="filter-group">
+                <button class="filter-btn active">All</button>
+				<button class="filter-btn" id="my-campaigns-btn" style="display:none;">My Campaigns</button>
+				<button class="filter-btn">Health</button>
+				<button class="filter-btn">Education</button>
+				<button class="filter-btn">Social</button>
+				<button class="filter-btn">Emergency</button>
+				<button class="filter-btn">Environment</button>
+				<button class="filter-btn">Creative</button>
+				<button class="filter-btn">Innovation</button>
+				<button class="filter-btn">Other</button>
+            </div>
+
+            <h2>Status</h2>
+            <div class="filter-group">
+                <button class="filter-btn">Active</button>
+                <button class="filter-btn">Funded</button>
+                <button class="filter-btn">Ending Soon</button>
+            </div>
+
+        </aside>
+
+        <!-- CARDS -->
+        <section class="cards-container" id="cards-container"></section>
+
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/campaigns.js"></script>
+</body>
+</html>
